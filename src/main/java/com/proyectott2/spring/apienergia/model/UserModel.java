@@ -2,7 +2,8 @@ package com.proyectott2.spring.apienergia.model;
 
 import java.sql.Date;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -55,12 +56,12 @@ public class UserModel {
     @Column(nullable = false, length = 100)
     private String fuenteEnergiaActual;
 
-    @Column(nullable = false, length = 100)
-    @JsonFormat(pattern = "ddMMyyyy")
+    @Column(nullable = false)
+    @CreationTimestamp
     private Date fechaCreacion;
 
-    @Column(nullable = false, length = 100)
-    @JsonFormat(pattern = "ddMMyyyy")
+    @Column(nullable = false)
+    @UpdateTimestamp
     private Date fechaActualizacion;
 
     public long getId() {
