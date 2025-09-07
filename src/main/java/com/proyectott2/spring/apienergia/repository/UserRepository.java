@@ -8,4 +8,5 @@ import com.proyectott2.spring.apienergia.model.UserModel;
 @Repository
 public interface UserRepository extends JpaRepository<UserModel, Long>{
 
+    public UserModel findByEmail(String email);
 }
