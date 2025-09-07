@@ -65,6 +65,9 @@ public class UserModel {
     @CreationTimestamp
     private Date fechaCreacion;
 
+    @Column(nullable = true, columnDefinition = "TEXT")
+    private String token;
+
     @Column(nullable = false)
     @UpdateTimestamp
     private Date fechaActualizacion;
@@ -188,4 +191,14 @@ public class UserModel {
     public void setFechaActualizacion(Date fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
+
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
 }
