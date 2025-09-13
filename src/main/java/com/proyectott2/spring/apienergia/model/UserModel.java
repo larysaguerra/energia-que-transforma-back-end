@@ -37,31 +37,31 @@ public class UserModel {
     @Column(nullable = false, length = 50)
     private String password;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String ciudad;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String departamento;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String pais;
 
-    @Column(nullable = false, length = 20)
+    @Column(length = 20)
     private String codigoPostal;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String tipoEdificacion;
 
-    @Column(nullable = false)
+    @Column()
     private float consumoMensualKwh;
 
-    @Column(nullable = false)
+    @Column()
     private float costoPorKwh;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String fuenteEnergiaActual;
 
-    @Column(nullable = false)
+    @Column()
     @CreationTimestamp
     private Date fechaCreacion;
 

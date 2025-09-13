@@ -34,7 +34,7 @@ public class UserService {
     public UserModel login(LoginRequest request) {
         UserModel user = this.userRepository.findByEmail(request.email);
         if (!Objects.equals(user.getPassword(), request.password)) {
-            throw new RuntimeException("fail login");
+            throw new RuntimeException("Fallo al iniciar sesion");
         }
         user.setToken(generateToken(request.email));
         return this.userRepository.save(user);
@@ -44,7 +44,7 @@ public class UserService {
         if (isLogin(token)) {
             return this.userRepository.findByEmail(getEmail(token));
         } else {
-            throw new RuntimeException("user not Authorized ");
+            throw new RuntimeException("Usuario no autorizado");
         }
     }
 
@@ -68,7 +68,7 @@ public class UserService {
             Claims claims = Jwts.parserBuilder().setSigningKey(hashKey).build().parseClaimsJws(token).getBody();
             return claims.getSubject();
         } catch (Exception e) {
-            throw new RuntimeException("user not Authorized ");
+            throw new RuntimeException("Usuario no autorizado");
         }
     }
 
