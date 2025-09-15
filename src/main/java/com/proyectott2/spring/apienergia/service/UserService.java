@@ -31,6 +31,10 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public UserModel getById(Long id) {
+        return this.userRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+    }
+
     public UserModel login(LoginRequest request) {
         UserModel user = this.userRepository.findByEmail(request.email);
         if (!Objects.equals(user.getPassword(), request.password)) {
@@ -38,6 +42,17 @@ public class UserService {
         }
         user.setToken(generateToken(request.email));
         return this.userRepository.save(user);
+    }
+
+    public UserModel updateUser(Long id, UserModel userDetails) {
+        UserModel existingUser = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        existingUser.setNombre(userDetails.getNombre());
+        existingUser.setEmail(userDetails.getEmail());
+        existingUser.setPassword(userDetails.getPassword());
+
+        return userRepository.save(existingUser);
     }
 
     public UserModel checkAuth(String token) {

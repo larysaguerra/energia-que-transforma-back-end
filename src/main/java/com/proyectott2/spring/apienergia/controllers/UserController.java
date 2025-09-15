@@ -7,11 +7,9 @@ import com.proyectott2.spring.apienergia.model.UserModel;
 import com.proyectott2.spring.apienergia.service.UserService;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import io.jsonwebtoken.Jwts;
-
+import org.springframework.http.ResponseEntity;
 
 @RestController
 @RequestMapping("/user")
@@ -29,6 +27,16 @@ public class UserController {
         return this.userService.saveUser(user);
     }
 
+    @GetMapping("/{id}")
+    public UserModel getUserById(@PathVariable("id") Long id) {
+        return this.userService.getById(id);
+    }
+
+     @PutMapping("/{id}")
+    public ResponseEntity<UserModel> updateUser(@PathVariable Long id, @RequestBody UserModel userDetails) {
+        UserModel updatedUser = userService.updateUser(id, userDetails);
+        return ResponseEntity.ok(updatedUser);
+    }
 
     @PostMapping("/login")
     public UserModel login(@RequestBody LoginRequest request) {
