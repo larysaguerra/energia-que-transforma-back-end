@@ -115,6 +115,14 @@ public class UserModel {
         this.password = password;
     }
 
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
     public String getCiudad() {
         return ciudad;
     }
