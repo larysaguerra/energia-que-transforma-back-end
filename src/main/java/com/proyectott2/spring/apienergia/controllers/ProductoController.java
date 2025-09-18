@@ -21,7 +21,7 @@ public class ProductoController {
         return this.productoService.getProducto();
     }
 
-    @PostMapping("/postproducto")
+    @PostMapping(value = "/postproducto", consumes = "application/json", produces = "application/json")
     public ProductoModel saveProducto(@RequestBody ProductoModel producto){
         return this.productoService.saveProducto(producto);
     }
