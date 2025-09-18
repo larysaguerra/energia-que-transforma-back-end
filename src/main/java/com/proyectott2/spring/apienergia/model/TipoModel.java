@@ -8,7 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,9 +17,6 @@ public class TipoModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private long Id;
-
-    @OneToOne(mappedBy = "tipo")
-    private CalculoModel calculo;
 
     @OneToMany(mappedBy = "tipo")
     private List<ProductoModel> productos;

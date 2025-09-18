@@ -1,7 +1,5 @@
 package com.proyectott2.spring.apienergia.model;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,9 +20,6 @@ public class ProductoModel {
     @ManyToOne
     @JoinColumn(name = "tipo_id", nullable = false)
     private TipoModel tipo;
-
-    @OneToMany(mappedBy = "producto")
-    private List<CalculoModel> calculos;
 
     @Column(nullable = false)
     private String nombre;
@@ -68,6 +62,9 @@ public class ProductoModel {
 
     @Column(nullable = false)
     private boolean incentivosDisponibles;
+
+    @Column()
+    private String urlImagen;
 
     public long getId() {
         return Id;
@@ -197,11 +194,11 @@ public class ProductoModel {
         this.tipo = tipo;
     }
 
-    public List<CalculoModel> getCalculos() {
-        return calculos;
+    public String getUrlImagen() {
+        return urlImagen;
     }
 
-    public void setCalculos(List<CalculoModel> calculos) {
-        this.calculos = calculos;
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
     }
 }

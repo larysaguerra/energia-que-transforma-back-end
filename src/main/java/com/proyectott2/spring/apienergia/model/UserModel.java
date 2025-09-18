@@ -1,7 +1,6 @@
 package com.proyectott2.spring.apienergia.model;
 
 import java.sql.Date;
-import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -11,7 +10,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,9 +19,6 @@ public class UserModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private long Id;
-
-    @OneToMany(mappedBy = "usuario")
-    private List<CalculoModel> calculos;
 
     @Column(nullable = false, length = 100)
     private String nombre;
@@ -37,32 +32,9 @@ public class UserModel {
     @Column(nullable = false, length = 50)
     private String password;
 
+    //Solo puede ser "administrador" o "usuario"
     @Column(nullable = false, length = 100)
     private String rol;
-
-    @Column(length = 100)
-    private String ciudad;
-
-    @Column(length = 100)
-    private String departamento;
-
-    @Column(length = 100)
-    private String pais;
-
-    @Column(length = 20)
-    private String codigoPostal;
-
-    @Column(length = 100)
-    private String tipoEdificacion;
-
-    @Column()
-    private float consumoMensualKwh;
-
-    @Column()
-    private float costoPorKwh;
-
-    @Column(length = 100)
-    private String fuenteEnergiaActual;
 
     @Column()
     @CreationTimestamp
@@ -123,70 +95,6 @@ public class UserModel {
         this.rol = rol;
     }
 
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
-    public String getDepartamento() {
-        return departamento;
-    }
-
-    public void setDepartamento(String departamento) {
-        this.departamento = departamento;
-    }
-
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
-    public String getCodigoPostal() {
-        return codigoPostal;
-    }
-
-    public void setCodigoPostal(String codigoPostal) {
-        this.codigoPostal = codigoPostal;
-    }
-
-    public String getTipoEdificacion() {
-        return tipoEdificacion;
-    }
-
-    public void setTipoEdificacion(String tipoEdificacion) {
-        this.tipoEdificacion = tipoEdificacion;
-    }
-
-    public float getConsumoMensualKwh() {
-        return consumoMensualKwh;
-    }
-
-    public void setConsumoMensualKwh(float consumoMensualKwh) {
-        this.consumoMensualKwh = consumoMensualKwh;
-    }
-
-    public float getCostoPorKwh() {
-        return costoPorKwh;
-    }
-
-    public void setCostoPorKwh(float costoPorKwh) {
-        this.costoPorKwh = costoPorKwh;
-    }
-
-    public String getFuenteEnergiaActual() {
-        return fuenteEnergiaActual;
-    }
-
-    public void setFuenteEnergiaActual(String fuenteEnergiaActual) {
-        this.fuenteEnergiaActual = fuenteEnergiaActual;
-    }
-
     public Date getFechaCreacion() {
         return fechaCreacion;
     }
@@ -202,7 +110,6 @@ public class UserModel {
     public void setFechaActualizacion(Date fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
-
 
     public String getToken() {
         return token;
