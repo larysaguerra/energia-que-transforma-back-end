@@ -189,5 +189,19 @@ public class ProductoModel {
         this.incentivosDisponibles = incentivosDisponibles;
     }
 
-    
+    public TipoModel getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoModel tipo) {
+        this.tipo = tipo;
+    }
+
+    public List<CalculoModel> getCalculos() {
+        return calculos;
+    }
+
+    public void setCalculos(List<CalculoModel> calculos) {
+        this.calculos = calculos;
+    }
 }

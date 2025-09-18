@@ -3,6 +3,7 @@ package com.proyectott2.spring.apienergia.controllers;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import com.proyectott2.spring.apienergia.model.ProductoModel;
@@ -21,7 +22,7 @@ public class ProductoController {
         return this.productoService.getProducto();
     }
 
-    @PostMapping("/postproducto")
+    @PostMapping(value = "/postproducto", consumes = "application/json", produces = "application/json")
     public ProductoModel saveProducto(@RequestBody ProductoModel producto){
         return this.productoService.saveProducto(producto);
     }
