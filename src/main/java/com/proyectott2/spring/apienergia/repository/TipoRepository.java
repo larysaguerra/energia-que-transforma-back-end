@@ -7,5 +7,5 @@ import com.proyectott2.spring.apienergia.model.TipoModel;
 
 @Repository
 public interface TipoRepository extends JpaRepository<TipoModel, Long> {
-
+    boolean existsById(Long id);
 }
