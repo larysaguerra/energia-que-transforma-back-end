@@ -1,4 +1,3 @@
-com\proyectott2\spring\apienergia\service\CalculoService.class
 com\proyectott2\spring\apienergia\ApienergiaApplication.class
 com\proyectott2\spring\apienergia\model\ProductoModel.class
 com\proyectott2\spring\apienergia\controllers\UserController.class
@@ -10,9 +9,7 @@ com\proyectott2\spring\apienergia\repository\TipoRepository.class
 com\proyectott2\spring\apienergia\controllers\TipoController.class
 com\proyectott2\spring\apienergia\service\UserService.class
 com\proyectott2\spring\apienergia\service\TipoService.class
-com\proyectott2\spring\apienergia\model\CalculoModel.class
 com\proyectott2\spring\apienergia\controllers\ProductoController.class
-com\proyectott2\spring\apienergia\repository\CalculoRepository.class
+com\proyectott2\spring\apienergia\configurations\DataInitializer.class
 com\proyectott2\spring\apienergia\model\TipoModel.class
 com\proyectott2\spring\apienergia\model\UserModel.class
-com\proyectott2\spring\apienergia\controllers\CalculoController.class
