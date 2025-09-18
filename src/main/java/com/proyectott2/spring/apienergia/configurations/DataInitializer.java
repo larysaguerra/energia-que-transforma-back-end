@@ -1,6 +1,5 @@
 package com.proyectott2.spring.apienergia.configurations;
 
-import java.util.Arrays;
 import java.util.Map;
 
 import org.springframework.boot.CommandLineRunner;
